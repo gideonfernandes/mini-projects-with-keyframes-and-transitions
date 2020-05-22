@@ -3,7 +3,7 @@
 	--page-2-color: slateblue;
 	--page-3-color: teal;
 	--page-4-color: tan;
-	--animate-speed: 1s;
+	--animate-speed: 2s;
 }
 
 body {
@@ -66,4 +66,46 @@ body {
 .btn-home {
 	color: white;
 	background-color: var(--page-1-color);
+}
+
+/* Page Animation */
+#page-1 h1 {
+	transform: translateY(-1200px);
+	animation: animation-title forwards var(--animate-speed) ease-in;
+}
+
+#page-1 p {
+	transform: translateX(-1800px);
+	animation: animation-title forwards var(--animate-speed) ease-in 1s;
+}
+
+/* Keyframes */
+@keyframes animation-title {
+	to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes animation-text {
+	to {
+		transform: translateX(0);
+	}
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+	.btn {
+		display: inline-block;
+		padding: 0.8rem 1.8rem;
+		font-size: 1rem;
+	}
+
+	.page h1 {
+		font-size: 3rem;
+	}
+
+	.page p {
+		font-size: 1rem;
+		line-height: 1.5;
+	}
 }
