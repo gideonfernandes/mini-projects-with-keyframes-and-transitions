@@ -64,17 +64,22 @@ h2 {
   padding: 1rem;
   width: 400px;
   background-color: var(--secondary-color);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  text-align: left;
 }
 
 /* Right Side */
 #timeline > .container > ul li:nth-child(odd) div {
   left: 40px;
+  transform: translateX(200px);
 }
 
 /* Left Side */
 #timeline > .container > ul li:nth-child(even) div {
   left: -434px;
+  transform: translateX(-200px);
 }
 
 /* Dots */
@@ -86,7 +91,7 @@ h2 {
   transform: translateX(-50%);
   width: 26px;
   height: 26px;
-  background-color: var(--secondary-color);
+  background-color: white;
   border-radius: 50%;
   transition: background-color 0.5s ease-in;
 }
@@ -113,6 +118,17 @@ h2 {
   right: -15px;
   border-width: 8px 0 8px 16px;
   border-color: transparent transparent transparent var(--secondary-color);
+}
+
+/* Show Boxes */
+#timeline > .container > ul li.show div {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+}
+
+#timeline > .container > ul li.show::after {
+  background-color: var(--secondary-color);
 }
 
 @media(max-width: 900px) {
